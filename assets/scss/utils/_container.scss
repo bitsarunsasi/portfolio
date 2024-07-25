@@ -1,0 +1,61 @@
+.row {
+    @include make-row;
+}
+
+.row>* {
+    padding-left: $default-grid-gutter;
+    padding-right: $default-grid-gutter;
+}
+
+.container-fluid {
+    width: 100%;
+    padding-left: $default-grid-gutter;
+    padding-right: $default-grid-gutter;
+
+    @media(min-width:$md) {
+        padding-left: calc($default-grid-gutter * 3);
+        padding-right: calc($default-grid-gutter * 3);
+    }
+
+    @media(min-width:$xl) {
+        padding-left: calc($default-grid-gutter * 4);
+        padding-right: calc($default-grid-gutter * 4);
+    }
+}
+
+.container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: $default-grid-gutter;
+    padding-left: $default-grid-gutter;
+    width: 100%;
+
+    @include mq(sm) {
+        max-width: $col-sm;
+    }
+
+    @include mq(md) {
+        max-width: $col-md;
+    }
+
+    @include mq(lg) {
+        max-width: $col-lg;
+    }
+
+    @include mq(xl) {
+        max-width: $col-xl;
+    }
+
+    @include mq(xxl) {
+        max-width: $col-xxl;
+    }
+}
+
+// .col {
+//     @include columns-loop(offset, $default-grid-columns, $default-grid-gutter);
+
+//     // @media screen and (max-width: $grid-tablet-breakpoint) {
+//     //     @include columns-loop(tab, $grid-tablet-columns, $tab-gutter);
+//     // }
+// }

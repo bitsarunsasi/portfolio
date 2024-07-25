@@ -1,0 +1,534 @@
+// Intro Block
+// -----------------------------------------------------------------------------
+.hero {
+    position: relative;
+    padding: 8rem 0 2rem;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        //background-color: palevioletred;
+    }
+
+    &__left,
+    &__right {
+        width: 100%
+    }
+
+    &__heder {
+        font-size: 4rem;
+        line-height: 1.2;
+        color: var(--color-dark-1);
+        margin-bottom: 2rem;
+    }
+
+    &__desc {
+        font-size: 1rem;
+        color: var(--color-light-4);
+        margin-bottom: 1rem;
+    }
+
+    &__sub-header {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--color-dark-1);
+        padding-left: 4rem;
+        margin-bottom: 1rem;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 3.5rem;
+            left: 0;
+            top: 50%;
+            height: 1px;
+            transform: translateY(-50%);
+            background-color: var(--color-dark-1);
+        }
+    }
+
+    @media screen and (min-width: $sm) {
+        &__container {
+            max-width: 80%;
+        }
+    }
+
+    @media screen and (min-width: $md) {
+        &__container {
+            max-width: 100%;
+        }
+    }
+
+    @media screen and (min-width: $lg) {
+        padding: 15rem 0 4rem;
+
+        &__container {
+            flex-direction: row;
+            gap: 3rem;
+            justify-content: space-between;
+            align-items: end;
+            max-width: 100%;
+        }
+
+        &__left,
+        &__right {
+            margin-bottom: 2rem;
+        }
+
+        &__left {
+            //background-color: aqua;
+            flex-grow: 1;
+        }
+
+        &__right {
+            max-width: 20rem;
+            //background-color: bisque;
+            font-size: 1.125rem;
+            margin-right: offset-space(1);
+        }
+
+        &__heder {
+            font-size: 8rem;
+            font-weight: 500;
+            line-height: 1;
+        }
+    }
+
+    @media screen and (min-width: $xl) {
+        &__right {
+            max-width: 25rem;
+            margin-right: offset-space(1);
+        }
+    }
+
+    @media screen and (min-width: $xxl) {
+        &__right {
+            margin-right: offset-space(1);
+            //font-size: 1.5rem;
+        }
+
+        &__heder {
+            font-size: 10rem;
+        }
+    }
+}
+
+// Info Panel
+// -----------------------------------------------------------------------------
+.info-panel {
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 0 2rem;
+
+    &__left {
+        position: relative;
+    }
+
+    &__right {
+        font-weight: 500;
+        color: var(--color-dark-1);
+    }
+
+    @media screen and (min-width: $lg) {
+        padding: 2rem 0;
+
+    }
+}
+
+// Status
+// -----------------------------------------------------------------------------
+.avail-status {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+
+    &__indicator {
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 50%;
+        background-color: var(--color-light-1);
+        outline: 4px solid reduce-opacity(#a2a2a9, 0.2);
+    }
+
+    &__label {
+        padding: 0 0.5rem;
+        font-weight: 500;
+        color: var(--color-dark-5);
+    }
+
+    &____indicator--active {
+        background-color: var(--color-success);
+        outline: 4px solid reduce-opacity(#0dd877, 0.2);
+    }
+}
+
+// HM Media Block
+// -----------------------------------------------------------------------------
+.media-block {
+    background-color: inherit;
+    position: relative;
+
+    &__wrapper {
+        width: 100%;
+        display: block;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+// Showcase grid
+// -----------------------------------------------------------------------------
+.sc-grid-full {
+    width: 100% !important;
+}
+
+.sc-grid {
+    width: 100%;
+
+    @media(min-width:$lg) {
+        width: calculate-width(6);
+    }
+}
+
+.grid-bottom-gap {
+    margin-bottom: calc($default-grid-gutter * 2);
+
+    @media screen and (min-width: $md) {
+        margin-bottom: calc($default-grid-gutter * 4)
+    }
+
+    @media screen and (min-width: $lg) {
+        margin-bottom: calc($default-grid-gutter * 5);
+    }
+}
+
+.sc-box {
+    $self: &;
+    display: block;
+    position: relative;
+
+    &__link {
+        display: block;
+        position: relative;
+    }
+
+    &__media {
+        margin-bottom: $default-grid-gutter;
+        display: block;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: self-start;
+        gap: 1rem;
+    }
+
+    &__count {
+        font-size: 0.875rem;
+        font-weight: 500;
+        flex: none;
+        padding-top: 0.3rem;
+    }
+
+    &__title {
+        font-size: 1.125rem;
+        color: var(--color-dark-5);
+        font-weight: 500;
+    }
+
+    &__button {
+        width: 4rem;
+        height: 4rem;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+
+    @media screen and (min-width: $lg) {
+        &__count {
+            font-size: 1rem;
+        }
+
+        &__title {
+            font-size: 1.25rem;
+        }
+
+        &__content {
+            gap: 1.75rem;
+        }
+
+        &__button {
+            width: 6rem;
+            height: 6rem;
+            top: 2rem;
+            right: 2rem;
+        }
+    }
+
+    &:hover {
+        #{$self}__button {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+
+.button-view-case {
+    width: 6rem;
+    height: 6rem;
+    background-color: var(--color-white);
+    color: var(--color-dark-1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    border-radius: 50%;
+    font-weight: 500;
+}
+
+.tags {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    &__list {
+        font-size: 0.875rem;
+        padding: 0.25rem 1rem;
+        border-radius: 0.25rem;
+        margin: 0.25rem;
+        color: var(--color-white);
+        font-weight: 400;
+        align-items: start;
+
+        // glassmorphism
+        background: rgba(0, 0, 0, 0.7);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(6.2px);
+        -webkit-backdrop-filter: blur(6.2px);
+    }
+}
+
+// HM Showcase 
+// -----------------------------------------------------------------------------
+.hm-showcase {
+    padding: 4rem 0;
+
+    .hm-showcase__header {
+        //background-color: pink;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        margin-bottom: 1rem;
+    }
+
+    .section__title {
+        margin: 0;
+        grid-area: 1 / 1 / 2 / 4;
+    }
+
+    .hm-showcase__label {
+        font-size: 1rem;
+        color: var(--color-light-2);
+        font-weight: 500;
+        line-height: normal;
+        grid-area: 1 / 8 / 2 / 11;
+    }
+
+    &__button-holder {
+        margin-top: 4rem;
+    }
+
+    @media screen and (min-width: $lg) {
+        padding: 8rem 0;
+
+        .hm-showcase__header {
+            margin-bottom: calc($base-margin * 2);
+        }
+    }
+}
+
+// HM About 
+// -----------------------------------------------------------------------------
+.hm-about {
+    padding: 4rem 0;
+
+    &__container {
+        width: 100%;
+    }
+
+    &__title-xl {
+        font-size: 1.75rem;
+        font-weight: 400;
+        margin-bottom: calc($default-grid-gutter * 3);
+    }
+
+    &__paragraph {
+        font-size: 1rem;
+        color: var(--color-light-4);
+        margin-bottom: calc($default-grid-gutter * 3);
+    }
+
+    @media screen and (min-width: $lg) {
+        &__container {
+            width: calculate-width(10);
+            margin-left: auto;
+            //margin-right: offset-space(1);
+        }
+
+        &__title-xl {
+            font-size: 2rem;
+        }
+
+        &__paragraph {
+            font-size: 1.25rem;
+        }
+    }
+
+    @media screen and (min-width: $xl) {
+        padding: 8rem 0;
+
+        &__title-xl {
+            font-size: 2.125rem;
+        }
+
+        &__title-xl {
+            // font-size: 3rem;
+            margin-bottom: calc($default-grid-gutter * 4);
+        }
+    }
+}
+
+// HM Contact 
+// -----------------------------------------------------------------------------
+.hm-contact {
+    padding: 2rem 0 2rem;
+
+    &__container {
+        width: 100%;
+        position: relative;
+    }
+
+    &__subtitle {
+        font-size: 1.25rem;
+        font-weight: 300;
+        margin-bottom: 1.75rem;
+        line-height: normal;
+    }
+
+    &__title {
+        font-size: 2rem;
+        line-height: normal;
+    }
+
+    &__para {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+    }
+
+
+
+    @media only screen and (min-width: $md) {
+        &__container {
+            width: calculate-width(10);
+            margin-left: auto;
+            // margin-right: offset-space(1);
+            // margin-left: offset-space(2);
+        }
+
+        &__para {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media only screen and (min-width: $lg) {
+
+        &__title {
+            font-size: 3rem;
+        }
+
+        &__para {
+            font-size: 2rem;
+        }
+    }
+
+    @media only screen and (min-width: $xl) {
+        padding: 8rem 0;
+
+        &__title {
+            font-size: 6rem;
+        }
+    }
+}
+
+.link-contact {
+    position: relative;
+    font-size: 1.75rem;
+    color: var(--color-dark-1);
+    display: inline-block;
+    font-weight: 600;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        border-radius: 5px;
+        height: 0.05em;
+        bottom: 0;
+        left: 0;
+        background: currentcolor;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+
+
+    &:hover {
+        text-decoration: none;
+
+        &::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    }
+
+    @media only screen and (min-width: $xl) {
+        font-size: 2.5rem;
+    }
+}
+
+// Video Wrapper
+// -----------------------------------------------------------------------------
+.hm-video {
+    background-color: pink;
+    display: block;
+}

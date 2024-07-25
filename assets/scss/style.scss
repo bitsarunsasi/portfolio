@@ -1,0 +1,13 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+
+@import "./utils/global";
+@import "./utils/container";
+@import "./pages/navbar";
+@import "./pages/footer";
+@import "./utils/icons";
+
+// Pages
+@import "./pages/home";
+@import "./pages/page-project";
+@import "./pages/project-list";

@@ -1,0 +1,329 @@
+// Intro Block
+// -----------------------------------------------------------------------------
+.hm-intro {
+    position: relative;
+    padding: 4rem 0 2rem 0;
+
+    &__right,
+    &__left {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__heading {
+        font-size: 3rem;
+        font-weight: 400;
+    }
+
+    &__heading-sm {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    &__desc {
+        font-size: 0.9375rem;
+        color: var(--color-light-2);
+    }
+
+    @media(min-width:$lg) {
+        &__container {
+            justify-content: space-between;
+            gap: 2rem;
+            align-items: end;
+        }
+
+        &__right {
+            width: 50%;
+        }
+
+        &__left {
+            width: 30%;
+        }
+
+        &__desc {
+            margin-right: 3rem;
+        }
+    }
+
+    @media(min-width:$xl) {
+        &__heading {
+            font-size: 5rem;
+        }
+
+        &__heading-sm {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+// HM Media Block
+// -----------------------------------------------------------------------------
+.media-block {
+    background-color: inherit;
+    position: relative;
+
+    &__wrapper {
+        width: 100%;
+        display: block;
+    }
+}
+
+// Showcase grid
+// -----------------------------------------------------------------------------
+.sc-grid {
+    width: 100%;
+    margin-bottom: calc($default-grid-gutter * 3);
+
+    @media(min-width:$md) {
+        width: calculate-width(6);
+        margin-bottom: calc($default-grid-gutter * 2);
+    }
+}
+
+.sc-box {
+    display: block;
+    position: relative;
+
+    &__link {
+        display: block;
+    }
+
+    &__media {
+        margin-bottom: $default-grid-gutter;
+        display: block;
+    }
+
+    &__content {
+        display: flex;
+        align-items: self-start;
+        gap: 1rem;
+    }
+
+    &__count {
+        font-size: 0.875rem;
+        font-weight: 500;
+        flex: none;
+        padding-top: 0.3rem;
+    }
+
+    &__title {
+        font-size: 1.125rem;
+        color: var(--color-dark-5);
+        font-weight: 500;
+    }
+
+    @media screen and (min-width: $lg) {
+        &__count {
+            font-size: 1rem;
+        }
+
+        &__title {
+            font-size: 1.25rem;
+        }
+
+        &__content {
+            gap: 1.75rem;
+        }
+    }
+}
+
+// HM Showcase 
+// -----------------------------------------------------------------------------
+.hm-showcase {
+    padding: 4rem 0;
+
+    .hm-showcase__header {
+        //background-color: pink;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        margin-bottom: 1rem;
+    }
+
+    .section__title {
+        margin: 0;
+        grid-area: 1 / 1 / 2 / 4;
+    }
+
+    .hm-showcase__label {
+        font-size: 1rem;
+        color: var(--color-light-2);
+        font-weight: 500;
+        line-height: normal;
+        grid-area: 1 / 8 / 2 / 11;
+    }
+
+    @media screen and (min-width: $lg) {
+        padding: 8rem 0;
+
+        .hm-showcase__header {
+            margin-bottom: calc($base-margin * 2);
+        }
+    }
+}
+
+// HM About 
+// -----------------------------------------------------------------------------
+.hm-about {
+    padding: 4rem 0;
+
+    &__container {
+        width: 100%;
+    }
+
+    &__title-xl {
+        font-size: 1.75rem;
+        font-weight: 400;
+        margin-bottom: calc($default-grid-gutter * 3);
+    }
+
+    &__paragraph {
+        font-size: 1rem;
+        color: var(--color-light-2);
+        margin-bottom: calc($default-grid-gutter * 3);
+    }
+
+    @media screen and (min-width: $lg) {
+        &__container {
+            width: calculate-width(7);
+            margin-left: auto;
+            margin-right: offset-space(3);
+        }
+
+        &__title-xl {
+            font-size: 2rem;
+        }
+
+        &__paragraph {
+            font-size: 1.125rem;
+        }
+    }
+
+    @media screen and (min-width: $xl) {
+        padding: 8rem 0;
+
+        &__title-xl {
+            // font-size: 3rem;
+            margin-bottom: calc($default-grid-gutter * 4);
+        }
+    }
+}
+
+// HM Contact 
+// -----------------------------------------------------------------------------
+.hm-contact {
+    padding: 2rem 0 2rem;
+
+    &__container {
+        width: 100%;
+        position: relative;
+    }
+
+    &__subtitle {
+        font-size: 1.25rem;
+        font-weight: 300;
+        margin-bottom: 1.75rem;
+        line-height: normal;
+    }
+
+    &__title {
+        font-size: 2rem;
+        line-height: normal;
+    }
+
+    &__para {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+    }
+
+
+
+    @media only screen and (min-width: $md) {
+        &__container {
+            width: calculate-width(10);
+            margin-left: offset-space(2);
+        }
+
+        &__para {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media only screen and (min-width: $lg) {
+        &__container {
+            width: calculate-width(9);
+            margin-left: offset-space(2);
+            margin-right: offset-space(1);
+        }
+
+        &__title {
+            font-size: 3rem;
+        }
+
+        &__para {
+            font-size: 2rem;
+        }
+    }
+
+    @media only screen and (min-width: $xl) {
+        padding: 8rem 0;
+
+        &__container {
+            width: calculate-width(9);
+            margin-left: offset-space(2);
+            margin-right: offset-space(1);
+        }
+
+        &__title {
+            font-size: 6rem;
+        }
+    }
+
+    @media only screen and (min-width: $xxl) {
+        &__container {
+            width: calculate-width(8);
+        }
+    }
+}
+
+.link-contact {
+    position: relative;
+    font-size: 1.75rem;
+    color: var(--color-dark-1);
+    display: inline-block;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        border-radius: 5px;
+        height: 0.05em;
+        bottom: 0;
+        left: 0;
+        background: currentcolor;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+
+
+    &:hover {
+        text-decoration: none;
+
+        &::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    }
+
+    @media only screen and (min-width: $xl) {
+        font-size: 2.5rem;
+    }
+}

@@ -1,0 +1,71 @@
+// Calculate column width
+// -----------------------------------------------------------------------------
+@function calculate-width($i) {
+    @return calc(100% / $default-grid-columns * $i);
+}
+
+// Calculate Offset
+// -----------------------------------------------------------------------------
+@function offset-space($i) {
+    @return calc(100% / $default-grid-columns * $i);
+}
+
+// Change color opacity
+// -----------------------------------------------------------------------------
+@function reduce-opacity($color, $opacity) {
+    @return rgba($color, $opacity);
+}
+
+// Create Icons
+// -----------------------------------------------------------------------------
+@mixin make-icon-wraper($multiplier) {
+    width: calc($multiplier * $icon-base-width);
+    height: calc($multiplier * $icon-base-height);
+}
+
+// Create row
+// -----------------------------------------------------------------------------
+@mixin make-row() {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(-1 * $default-grid-gutter);
+    margin-right: calc(-1 * $default-grid-gutter);
+}
+
+// Container
+// -----------------------------------------------------------------------------
+@mixin mq($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+            @content;
+        }
+    }
+}
+
+// Container-fluid
+// -----------------------------------------------------------------------------
+@mixin make-container-fluid() {
+    width: 100%;
+    padding-left: $default-grid-gutter;
+    padding-right: $default-grid-gutter;
+}
+
+// Create column
+// -----------------------------------------------------------------------------
+@mixin col-props($i, $columns, $gutter) {
+    width: calculate-width($i, $columns);
+    padding-left: calc($gutter/2);
+    padding-right: calc($gutter/2);
+}
+
+@mixin columns-loop($name, $columns, $gutter) {
+    @for $i from 0 through $columns {
+        &-#{$i} {
+            @include col-props($i, $columns, $gutter);
+        }
+
+        &-#{$name}-left-#{$i} {
+            margin-left: calculate-width($i, $columns);
+        }
+    }
+}

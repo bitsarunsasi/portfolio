@@ -1,0 +1,70 @@
+:root {
+    --color-black: #000000;
+    --color-dark-1: #070707;
+    --color-dark-2: #1A1A1A;
+    --color-dark-3: #0F0F0F;
+    --color-dark-4: #17191b;
+    --color-dark-5: #060505;
+
+    --color-white: #ffffff;
+    --color-light-1: #a2a2a9;
+    --color-light-2: #6e6e73;
+    --color-light-3: #878c8e;
+    --color-light-4: #757b80;
+
+    --underline-1: #dadada;
+
+    --color-danger: #ff505c;
+    --color-success: #0dd877;
+
+}
+
+$base-font-family: 'Switzer';
+$base-font-size: 1rem;
+
+//- global media vars
+$def: 320px;
+
+$sm: 576px; // (min-width: 576px)
+$md: 768px; // (min-width: 768px)
+$lg: 992px; // (min-width: 992px)
+$gl: 1024px; //! gap `lg - xl` (min-width: 1024px)
+$xl: 1200px; // (min-width: 1200px)
+$xxl: 1400px; // (max-width: 1400px)
+
+$col-sm: 540px; // (max-width: 540px)
+$col-md: 720px; // (max-width: 720px)
+$col-lg: 960px; // (max-width: 960px)
+$col-xl: 1140px; // (max-width: 1140px)
+$col-xxl: 1320px; // (max-width: 1320px
+
+$upto-sm: 575.98px;
+$upto-md: 767.98px;
+$upto-lg: 991.98px;
+$upto-xl: 1199.98px;
+$upto-lg: 1399.98px;
+
+$breakpoints: (
+    sm: $sm,
+    md: $md,
+    lg: $lg,
+    xl: $xl,
+    xxl:$xxl
+);
+
+$default-grid-columns: 12;
+$default-grid-gutter: 12px;
+
+$icon-base-height: 12px;
+$icon-base-width: 12px;
+
+// Margins
+$base-margin: 16px;
+
+// Font Base
+$base-margin: 16px;
+
+// Shadow
+$default-box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+$box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+$box-shadow-2: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;

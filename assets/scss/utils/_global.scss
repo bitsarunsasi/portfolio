@@ -1,0 +1,292 @@
+@font-face {
+    font-family: 'Switzer';
+    src: url('../../assets/fonts/Switzer-Thin.woff2') format('woff2'),
+        url('../../assets/fonts/Switzer-Thin.woff') format('woff'),
+        url('../../assets/fonts/Switzer-Thin.ttf') format('ttf');
+    font-weight: 340;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Switzer';
+    src: url('../../assets/fonts/Switzer-Regular.woff2') format('woff2'),
+        url('../../assets/fonts/Switzer-Regular.woff') format('woff'),
+        url('../../assets/fonts/Switzer-Regular.ttf') format('ttf');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Switzer';
+    src: url('../../assets/fonts/Switzer-Medium.woff2') format('woff2'),
+        url('../../assets/fonts/Switzer-Medium.woff') format('woff'),
+        url('../../assets/fonts/Switzer-Medium.ttf') format('ttf');
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Switzer';
+    src: url('../../assets/fonts/Switzer-Semibold.woff') format('woff2'),
+        url('../../assets/fonts/Switzer-Semibold.woff') format('woff'),
+        url('../../assets/fonts/Switzer-Semibold.ttf') format('ttf');
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Switzer';
+    src: url('../../assets/fonts/Switzer-Bold.woff2') format('woff2'),
+        url('../../assets/fonts/Switzer-Bold.woff') format('woff'),
+        url('../../assets/fonts/Switzer-Bold.ttf') format('ttf');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $base-font-family;
+    line-height: 1.5;
+    color: var(--color-dark-5);
+    background-color: var(--color-white);
+    font-size: $base-font-size;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-dark-1);
+}
+
+button {
+    font-family: $base-font-family;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--color-dark-1);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+img,
+picture,
+figure {
+    display: block;
+    max-width: 100%;
+}
+
+// Rulers
+// -----------------------------------------------------------------------------
+.hr-line {
+    display: inline-block;
+    align-self: stretch;
+    width: 100%;
+    min-height: 1px;
+    background-color: reduce-opacity(#000000, 0.1);
+}
+
+.vr-line {
+    display: inline-block;
+    align-self: stretch;
+    width: 1px;
+    min-height: 1em;
+    background-color: currentColor;
+    opacity: .25;
+}
+
+// Width
+// -----------------------------------------------------------------------------
+.width-25 {
+    width: 25% !important;
+}
+
+.width-50 {
+    width: 50% !important;
+}
+
+.width-75 {
+    width: 75% !important;
+}
+
+.width-100 {
+    width: 100% !important;
+}
+
+// Font Weight
+// -----------------------------------------------------------------------------
+.fw-300 {
+    font-weight: 300 !important;
+}
+
+.fw-400 {
+    font-weight: 400 !important;
+}
+
+.fw-500 {
+    font-weight: 500 !important;
+}
+
+.fw-600 {
+    font-weight: 600 !important;
+}
+
+.fw-700 {
+    font-weight: 700 !important;
+}
+
+// Display
+// -----------------------------------------------------------------------------
+.d-block {
+    display: block !important;
+}
+
+.d-inline-block {
+    display: inline-block !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.d-inline-flex {
+    display: inline-flex !important;
+}
+
+.d-grid {
+    display: grid !important;
+}
+
+// Text-align
+// -----------------------------------------------------------------------------
+.text-right {
+    text-align: right !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+// Components
+// -----------------------------------------------------------------------------
+.section {
+    position: relative;
+
+    &__title {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        font-weight: 500;
+        color: var(--color-dark-5);
+    }
+}
+
+.button-default {
+    $self: &;
+    font-size: 1rem;
+    font-weight: 500;
+    display: inline-flex;
+    padding: 0.25rem;
+    align-items: center;
+    border-radius: 1.5rem;
+    min-height: 3rem;
+    background-color: var(--color-dark-1);
+    border: 1px solid var(--color-dark-1);
+    transition: all 0.2s cubic-bezier(0.79, 0.33, 0.14, 0.53);
+
+    &__label {
+        padding: 0.125rem 1rem;
+        align-self: center;
+        color: var(--color-white);
+        transition: all 0.2s cubic-bezier(0.79, 0.33, 0.14, 0.53);
+    }
+
+    &__icon {
+        width: 2.25rem;
+        height: 2.25rem;
+        background-color: var(--color-white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 1.125rem;
+        box-shadow: $box-shadow-2;
+        transition: all 0.2s cubic-bezier(0.79, 0.33, 0.14, 0.53);
+
+        i {
+            font-size: 1.5rem;
+        }
+    }
+
+    &:hover {
+        background-color: var(--color-white);
+        border-radius: 0.25rem;
+
+        #{ $self }__label {
+            color: var(--color-dark-1);
+        }
+
+        #{ $self }__icon {
+            background-color: var(--color-dark-1);
+            //transform: rotate(45deg);
+            border-radius: 0.25rem;
+
+            i {
+                color: var(--color-white);
+            }
+        }
+    }
+}
+
+.link-underline {
+    position: relative;
+    display: inline-block;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        border-radius: 5px;
+        height: 0.05em;
+        bottom: 0;
+        left: 0;
+        background: currentcolor;
+        transform-origin: bottom right;
+        transition: transform 0.25s ease-out;
+    }
+
+
+    &:hover {
+        text-decoration: none;
+
+        &::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    }
+}

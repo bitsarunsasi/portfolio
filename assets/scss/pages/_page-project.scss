@@ -1,0 +1,238 @@
+.project-desc {
+    position: relative;
+    display: block;
+    //background-color: pink;
+
+    &__intro {
+        //background-color: tan;
+        padding: 10rem 0 4rem;
+    }
+
+    &__header {
+        font-size: 4rem;
+        font-weight: 500;
+        margin-bottom: 2.5rem;
+        line-height: 1;
+        color: var(--color-dark-1);
+    }
+
+    &__sub-header {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: var(--color-dark-1);
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+
+        .right,
+        .left {
+            margin-bottom: 1.25rem;
+        }
+    }
+
+
+    @media screen and (min-width: $md) {
+        &__header {
+            font-size: 5rem;
+        }
+
+        &__sub-header {
+            font-size: 2rem;
+        }
+
+        &__footer {
+            flex-direction: row;
+            gap: 2rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    @media screen and (min-width: $xl) {
+        &__intro {
+            padding: 15rem 0 4rem;
+        }
+
+        &__header {
+            font-size: 7rem;
+        }
+    }
+}
+
+.project-info {
+    position: relative;
+    padding: 2rem 0 2rem;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__content {
+        line-height: normal;
+        font-weight: 500;
+
+        p {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__block {
+        font-size: 1.125rem;
+    }
+
+    @media screen and (min-width: $md) {
+        padding: 6rem 0 6rem;
+
+        &__container {
+            flex-direction: row;
+            justify-content: end;
+        }
+
+        &__content {
+            width: 70%;
+        }
+
+        &__block {
+            margin-right: offset-space(1);
+        }
+    }
+
+    @media screen and (min-width: $xl) {
+        &__content {
+            width: 60%;
+        }
+
+        &__block {
+            font-size: 1.5rem;
+            margin-right: offset-space(2);
+        }
+    }
+}
+
+.summary-list {
+    margin: 2rem 0;
+    line-height: normal;
+
+    &__item {
+        border-bottom: 1px solid var(--underline-1);
+        padding: 1rem 0;
+        margin-bottom: 0.5rem;
+    }
+
+    &__label {
+        color: var(--color-light-2);
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        font-size: 0.9375rem;
+    }
+
+    &__value {
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: var(--color-dark);
+    }
+
+}
+
+.external-link {
+    $self: &;
+    position: relative;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-dark-1);
+    position: relative;
+    display: inline-block;
+    align-items: center;
+    padding: 0.5rem 0;
+
+    &__label {
+        margin-right: 2.25rem;
+        position: relative;
+        display: block;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            border-radius: 5px;
+            height: 0.05em;
+            bottom: 0;
+            left: 0;
+            background: currentcolor;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+    }
+
+    &::after {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        content: "\eb17";
+        font-family: 'lineicons';
+        width: 2rem;
+        height: 2rem;
+        border-radius: 0;
+        // background-color: pink;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &:hover {
+        #{$self}__label {
+            &::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+        }
+    }
+}
+
+.screen-preview {
+    display: block;
+    position: relative;
+
+    &:not(:last-child) {
+        margin-bottom: calc($default-grid-gutter * 2);
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+.next-project {
+    background-color: var(--color-white);
+    padding: 4rem 0;
+
+    &__container {
+        width: 100%;
+    }
+
+    &__title {
+        font-size: 3rem;
+        font-weight: 500;
+    }
+
+
+    @media screen and (min-width: $md) {
+        padding: 14rem 0;
+
+        &__container {
+            width: calculate-width(8);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        &__title {
+            font-size: 5rem;
+        }
+    }
+}

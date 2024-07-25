@@ -1,0 +1,17 @@
+.icon-base {
+    width: calc($icon-base-height * 1.5);
+    height: calc($icon-base-height * 1.5);
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@for $i from 1 through 5 {
+    .icon-base__#{$i}x {
+        @include make-icon-wraper($i);
+    }
+}
+
+.icon-arrow-right {
+    background-image: url('/assets/icons/arrow-right.svg');
+}
