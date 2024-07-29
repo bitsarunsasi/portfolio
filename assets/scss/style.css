@@ -72,6 +72,10 @@ a {
   color: var(--color-dark-1);
 }
 
+p {
+  margin-bottom: 1rem;
+}
+
 button {
   font-family: "Switzer";
   display: inline-block;
@@ -1096,6 +1100,77 @@ figure {
 .hm-video {
   background-color: pink;
   display: block;
+}
+
+.about-intro {
+  padding: 6rem 0rem;
+}
+.about-intro__container {
+  display: flex;
+  flex-direction: column;
+}
+.about-intro__content-small {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-light-1);
+  margin-bottom: 2rem;
+  max-width: 25rem;
+}
+.about-intro__content-main {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.about-intro__content {
+  position: relative;
+  color: var(--color-dark-1);
+}
+@media screen and (min-width: 768px) {
+  .about-intro__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 0px;
+  }
+  .about-intro__content-small {
+    font-size: 1rem;
+  }
+  .about-intro__content {
+    grid-area: 1/6/2/12;
+  }
+}
+@media screen and (min-width: 992px) {
+  .about-intro {
+    padding: 10rem 0 8rem;
+  }
+  .about-intro__content-main {
+    font-size: 2rem;
+  }
+}
+
+.profile-image {
+  position: relative;
+}
+.profile-image__container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 768px) {
+  .profile-image__container {
+    padding: 0 2rem;
+  }
+}
+
+.block-quote {
+  position: relative;
+  padding: 4rem 0rem;
+}
+.block-quote__title {
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--color-dark-1);
 }
 
 .project-desc {
