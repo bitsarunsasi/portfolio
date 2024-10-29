@@ -1204,7 +1204,6 @@ figure {
   }
   .tile-image__column {
     width: calc(25% - 2rem);
-    background-color: pink;
   }
 }
 
